@@ -12,7 +12,7 @@
         // creates a PDO database connection object
         $db = new PDO($dsn, $username, $password); 
 
-        $query = 'SELECT course.courseID, course.courseTitle, course.credit 
+        $query = 'SELECT course.courseID, course.courseTitle, course.credit, book.isbn13, book.price, book.bookTitle 
                   FROM course
                   CROSS JOIN book';
         $statement = $db->prepare($query);
@@ -25,12 +25,22 @@
         $statement->closeCursor();
         ?>
         <table border=“1”>
+            <tr style="background-color: #99CCFF;">
+                <td style="text-decoration=underline;">Course #</td>
+                <td>Course title</td>
+                <td>Book Image</td>
+                <td>Book Title</td>
+                <td style="text-decoration=underline;">Price</td>
+            </tr>
         <?php foreach ($products as $product) { ?>
         <tr>
+            
             <!-- course #, course title, book image, book title, price -->
-            <td><?php echo $product['courseID']; ?></td>
+            <td><?php echo $product['courseID'] . ' (' . $product['credit'] . ')'; ?></td>
             <td><?php echo $product['courseTitle']; ?></td>
-            <td><?php echo $product['credit']; ?></td>
+            <td><img src="images/<?php echo $product['isbn13'] . '.jpg'; ?>" alt=""></td>
+            <td><?php echo $product['bookTitle']; ?></td>
+            <td><?php echo '$' . $product['price']; ?></td>
         </tr>
         <?php } ?>
         </table>

@@ -1,56 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP Project</title>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Product records</title>
+    </head>
+    <body>
+        <?php 
+        $dsn = 'mysql:host=localhost:8111;dbname=BookCatalog';
+        $username = 'mgs_user';
+        $password = 'pa55word';
 
-    <!--=============== CSS =================-->
-    <link rel="stylesheet" href="css/style.css?v=<?php echo time(); ?>">
+        // creates a PDO database connection object
+        $db = new PDO($dsn, $username, $password); 
 
-</head>
-<body>
+        $query = 'SELECT course.courseID, course.courseTitle, course.credit, book.bookTitle, book.price
+                  FROM course
+                  CROSS JOIN book
+                  WHERE authorID = :author_id;';
+        $statement = $db->prepare($query);
+        $author_id = 1;
+        $statement->bindValue(':author_id', $author_id);
+        $statement->execute();
 
-<!--=============================== PHP CODE =====================================-->
-<?php
-
-$dsn = 'mysql:host=localhost:8111;dbname=BookCatalog';
-$username = 'chytran';
-$password = 'nYMnpgWyUzvfR29S';
-
-try {
-    $db = new PDO($dsn, $username, $password);
-} catch (PDOException $e) {
-    print "Error!: " . $e->getMessage() . "<br/>";
-    die();
-}
-
-// course table information (courseID, courseTitle, credit)
-$query = 'SELECT course.courseID, course.courseTitle, course.credit, book.bookTitle, book.price
-            FROM course 
-            CROSS JOIN book
-            WHERE courseID = :course_id';
-$statement = $db->prepare($query);
-$course_id = 1; //hard-code course id
-$statement->bindValue(':course_id', $course_id);
-$statement->execute();
-
-// fetchAll() gets all row from the prepare query statement
-$products = $statement->fetchAll();
-$statement->closeCursor();
-?>
-
-<table border="1">
-    <?php foreach ($products as $product) { ?>
+        // fetchAll() gets all rows from the prepared query statement
+        $products = $statement->fetchAll();
+        $statement->closeCursor();
+        ?>
+        <table border=“1”>
+        <?php foreach ($products as $product) { ?>
         <tr>
-            <td><?php echo $product['course.courseID'];?></td>
-            <td><?php echo $product['course.courseTitle'];?></td>
-            <td><?php echo $product['course.credit'];?></td>
-            <td><?php echo $product['book.bookTitle'];?></td>
-            <td><?php echo $product['book.price'];?></td>
-        </tr>  
-    <?php } ?>
-</table>
-</body>
+            <!-- Course #, Course title, Book image, Book Title, Price -->
+            <td><?php echo $product['firstName']; ?></td>
+            <td><?php echo $product['lastName']; ?></td>
+        </tr>
+        <?php } ?>
+        </table>
+    </body>
 </html>

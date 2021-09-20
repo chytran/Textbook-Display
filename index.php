@@ -12,13 +12,12 @@
         // creates a PDO database connection object
         $db = new PDO($dsn, $username, $password); 
 
-        $query = 'SELECT course.courseID, course.courseTitle, course.credit, book.bookTitle, book.price
+        $query = 'SELECT course.courseID, course.courseTitle, course.credit 
                   FROM course
-                  CROSS JOIN book
-                  WHERE authorID = :author_id;';
+                  CROSS JOIN book';
         $statement = $db->prepare($query);
-        $author_id = 1;
-        $statement->bindValue(':author_id', $author_id);
+        // $author_id = 1;
+        // $statement->bindValue(':author_id', $author_id);
         $statement->execute();
 
         // fetchAll() gets all rows from the prepared query statement
@@ -28,9 +27,10 @@
         <table border=“1”>
         <?php foreach ($products as $product) { ?>
         <tr>
-            <!-- Course #, Course title, Book image, Book Title, Price -->
-            <td><?php echo $product['firstName']; ?></td>
-            <td><?php echo $product['lastName']; ?></td>
+            <!-- course #, course title, book image, book title, price -->
+            <td><?php echo $product['courseID']; ?></td>
+            <td><?php echo $product['courseTitle']; ?></td>
+            <td><?php echo $product['credit']; ?></td>
         </tr>
         <?php } ?>
         </table>

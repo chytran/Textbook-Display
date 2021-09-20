@@ -1,31 +1,22 @@
-<?php
+<?php 
+    $dsn = 'mysql:host=localhost:8111;dbname=BookCatalog';
+    // $dsn = 'mysql:host=localhost;dbname=BookCatalog';
+    $username = 'mgs_user';
+    $password = 'pa55word';
 
-$dsn = 'mysql:host=localhost:8111;dbname=BookCatalog';
-$username = 'chytran';
-$password = 'nYMnpgWyUzvfR29S';
+    // creates a PDO database connection object
+    $db = new PDO($dsn, $username, $password); 
 
-try {
-    $db = new PDO($dsn, $username, $password);
-    foreach($db->query('SELECT * FROM author') as $row) {
-        print_r($row);
-    }
-    $db = null;
-} catch (PDOException $e) {
-    print "Error!: " . $e->getMessage() . "<br/>";
-    die();
-}
+    $query = 'SELECT course.courseID, course.courseTitle, course.credit, book.isbn13, book.price, book.bookTitle 
+                FROM course
+                CROSS JOIN book';
+    $statement = $db->prepare($query);
+    // $author_id = 1;
+    // $statement->bindValue(':author_id', $author_id);
+    $statement->execute();
 
-// course table information (courseID, courseTitle, credit)
-$query = 'SELECT courseID, courseTitle, credit FROM course WHERE courseID = :course_id';
-$statement = $db->prepare($query);
-$course_id = 1; //hard-code course id
-$statement->bindValue(':course_id', $course_id);
-$statement->execute();
-
-// fetchAll() gets all row from the prepare query statement
-$products = $statement->fetchAll();
-$statement->closeCursor();
-?>
-
-
+    // fetchAll() gets all rows from the prepared query statement
+    $products = $statement->fetchAll();
+    $statement->closeCursor();
+    ?>
 

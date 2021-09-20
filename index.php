@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP Project</title>
 
-    <<!--=============== CSS =================-->
+    <!--=============== CSS =================-->
     <link rel="stylesheet" href="css/style.css?v=<?php echo time(); ?>">
 
 </head>
@@ -21,19 +21,15 @@ $password = 'nYMnpgWyUzvfR29S';
 
 try {
     $db = new PDO($dsn, $username, $password);
-    foreach($db->query('SELECT * FROM author') as $row) {
-        print_r($row);
-    }
-    $db = null;
 } catch (PDOException $e) {
     print "Error!: " . $e->getMessage() . "<br/>";
     die();
 }
 
 // course table information (courseID, courseTitle, credit)
-$query = 'SELECT course.courseID, course.courseTitle, course.credit 
+$query = 'SELECT course.courseID, course.courseTitle, course.credit, book.bookTitle, book.price
             FROM course 
-            CROSS JOIN 
+            CROSS JOIN book
             WHERE courseID = :course_id';
 $statement = $db->prepare($query);
 $course_id = 1; //hard-code course id
@@ -48,9 +44,11 @@ $statement->closeCursor();
 <table border="1">
     <?php foreach ($products as $product) { ?>
         <tr>
-            <td><?php echo $product;?></td>
-            <td><?php echo "hi";?></td>
-            <td><?php echo "hi";?></td>
+            <td><?php echo $product['course.courseID'];?></td>
+            <td><?php echo $product['course.courseTitle'];?></td>
+            <td><?php echo $product['course.credit'];?></td>
+            <td><?php echo $product['book.bookTitle'];?></td>
+            <td><?php echo $product['book.price'];?></td>
         </tr>  
     <?php } ?>
 </table>

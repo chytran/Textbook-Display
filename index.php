@@ -31,7 +31,10 @@ try {
 }
 
 // course table information (courseID, courseTitle, credit)
-$query = 'SELECT courseID, courseTitle, credit FROM course WHERE courseID = :course_id';
+$query = 'SELECT course.courseID, course.courseTitle, course.credit 
+            FROM course 
+            CROSS JOIN 
+            WHERE courseID = :course_id';
 $statement = $db->prepare($query);
 $course_id = 1; //hard-code course id
 $statement->bindValue(':course_id', $course_id);
@@ -43,14 +46,13 @@ $statement->closeCursor();
 ?>
 
 <table border="1">
-
-</table>
     <?php foreach ($products as $product) { ?>
         <tr>
-            <td><?php echo $produc;?></td>
+            <td><?php echo $product;?></td>
             <td><?php echo "hi";?></td>
             <td><?php echo "hi";?></td>
         </tr>  
     <?php } ?>
+</table>
 </body>
 </html>

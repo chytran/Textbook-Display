@@ -46,7 +46,10 @@
                         <img src="../images/<?php echo '9781890774448' . '.jpg'; ?>" alt=""><a href=""></a>
                         <img src="../images/<?php echo '9781890774561' . '.jpg'; ?>" alt=""><a href=""></a>
                     <?php } else { ?>
-                        <img src="../images/<?php echo $product['isbn13'] . '.jpg'; ?>" alt=""><a href=""></a>
+                        <form action="function.php">
+                            submit
+                            <img src="../images/<?php echo $product['isbn13'] . '.jpg'; ?>" alt="">
+                        </form>
                     <?php } ?>
 
                 

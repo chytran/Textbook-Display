@@ -50,9 +50,7 @@
                 <img src="images/<?php echo '9781890774561' . '.jpg'; ?>" alt=""><a href=""></a>
             <?php } else { ?>
                 <img src="images/<?php echo $product['isbn13'] . '.jpg'; ?>" alt=""><a href=""></a>
-            <?php } ?>
-
-        
+            <?php } ?>        
         </td>
         <td>
             <?php if ($product['courseID'] == 'IS 424'){ ?>

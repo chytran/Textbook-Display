@@ -1,5 +1,5 @@
 <?php
-    include_once 'header.php';
+    include_once '../header.php';
 ?>
 <?php
     $dsn = 'mysql:host=localhost:8111;dbname=BookCatalog';
@@ -74,5 +74,5 @@
             <a href="priceSort/page5.php">5</a>
         </div>
 <?php
-    include_once 'footer.php';
+    include_once '../footer.php';
 ?>

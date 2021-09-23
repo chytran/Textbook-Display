@@ -1,5 +1,5 @@
 <?php
-    include_once 'header.php';
+    include_once '../header.php';
 ?>
 <?php
     $dsn = 'mysql:host=localhost:8111;dbname=BookCatalog';
@@ -43,10 +43,10 @@
                 <td><?php echo $product['courseTitle']; ?></td>
                 <td> 
                     <?php if ($product['courseID'] == 'IS 424'){ ?>
-                        <img src="images/<?php echo '9781890774448' . '.jpg'; ?>" alt=""><a href=""></a>
-                        <img src="images/<?php echo '9781890774561' . '.jpg'; ?>" alt=""><a href=""></a>
+                        <img src="..images/<?php echo '9781890774448' . '.jpg'; ?>" alt=""><a href=""></a>
+                        <img src="..images/<?php echo '9781890774561' . '.jpg'; ?>" alt=""><a href=""></a>
                     <?php } else { ?>
-                        <img src="images/<?php echo $product['isbn13'] . '.jpg'; ?>" alt=""><a href=""></a>
+                        <img src="..images/<?php echo $product['isbn13'] . '.jpg'; ?>" alt=""><a href=""></a>
                     <?php } ?>
 
                 
@@ -67,12 +67,12 @@
             <?php } ?>
         </table>
         <div class="number__container">
-            <a href="courseSort/page1.php">1</a>
-            <a href="courseSort/page2.php">2</a>
-            <a href="courseSort/page3.php">3</a>
-            <a href="courseSort/page4.php">4</a>
-            <a href="courseSort/page5.php">5</a>
+            <a href="page1.php">1</a>
+            <a href="page2.php">2</a>
+            <a href="page3.php">3</a>
+            <a href="page4.php">4</a>
+            <a href="page5.php">5</a>
         </div>
 <?php
-    include_once 'footer.php';
+    include_once '../footer.php';
 ?>

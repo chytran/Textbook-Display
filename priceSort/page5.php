@@ -1,5 +1,5 @@
 <?php
-    include_once 'header.php';
+    include_once '../../header.php';
 ?>
 <?php
     $dsn = 'mysql:host=localhost:8111;dbname=BookCatalog';
@@ -43,10 +43,10 @@
                 <td><?php echo $product['courseTitle']; ?></td>
                 <td> 
                     <?php if ($product['courseID'] == 'IS 424'){ ?>
-                        <img src="images/<?php echo '9781890774448' . '.jpg'; ?>" alt=""><a href=""></a>
-                        <img src="images/<?php echo '9781890774561' . '.jpg'; ?>" alt=""><a href=""></a>
+                        <img src="../images/<?php echo '9781890774448' . '.jpg'; ?>" alt=""><a href=""></a>
+                        <img src="../images/<?php echo '9781890774561' . '.jpg'; ?>" alt=""><a href=""></a>
                     <?php } else { ?>
-                        <img src="images/<?php echo $product['isbn13'] . '.jpg'; ?>" alt=""><a href=""></a>
+                        <img src="../images/<?php echo $product['isbn13'] . '.jpg'; ?>" alt=""><a href=""></a>
                     <?php } ?>
 
                 
@@ -74,5 +74,5 @@
             <a href="priceSort/page5.php">5</a>
         </div>
 <?php
-    include_once 'footer.php';
+    include_once '../../footer.php';
 ?>

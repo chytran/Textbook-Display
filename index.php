@@ -17,9 +17,18 @@
             <tr>
                 
                 <!-- course #, course title, book image, book title, price -->
-                <td><?php echo $product['courseID'] . ' (' . $product['credit'] . ')'; ?></td>
+                <td><?php echo $product['course'] . ' (' . $product['credit'] . ')'; ?></td>
                 <td><?php echo $product['courseTitle']; ?></td>
-                <td><img src="images/<?php echo $product['isbn13'] . '.jpg'; ?>" alt=""><a href=""></a></td>
+                <td>
+                    <?php if ($product['course'][15] == 'IS 424'){ ?>
+                        <img src="images/<?php echo '9781890774448' . '.jpg'; ?>" alt=""><a href=""></a>
+                        <img src="images/<?php echo '9781890774561' . '.jpg'; ?>" alt=""><a href=""></a>
+                    <?php } else { ?>
+                        <img src="images/<?php echo $product['isbn13'] . '.jpg'; ?>" alt=""><a href=""></a>
+                    <?php } ?>
+
+                
+                </td>
                 <td><?php echo $product['bookTitle']; ?></td>
                 <td><?php echo '$' . $product['price']; ?></td>
             </tr>

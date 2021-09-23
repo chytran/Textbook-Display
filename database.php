@@ -7,9 +7,12 @@
     // creates a PDO database connection object
     $db = new PDO($dsn, $username, $password); 
 
-    $query = 'SELECT course.courseID, course.courseTitle, course.credit, book.isbn13, book.price, book.bookTitle 
-                FROM course
-                CROSS JOIN book';
+    $query = 'SELECT course.courseTitle, course.credit, book.isbn13, book.price, book.bookTitle, coursebook.course, coursebook.book
+                FROM course 
+                INNER JOIN courseBook  
+                on course.courseID = coursebook.course
+                INNER JOIN book
+                on book.isbn13 = coursebook.book';
     $statement = $db->prepare($query);
     // $author_id = 1;
     // $statement->bindValue(':author_id', $author_id);

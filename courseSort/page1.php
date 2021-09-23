@@ -7,11 +7,11 @@
         ?>
         <table border=“1”>
             <tr style="background-color: #99CCFF;">
-                <td style="text-decoration=underline;"><a href="courseSort/page1.php">Course</a></td>
+                <td style="text-decoration=underline;"><a href="courseSort/page1.php">Course #</a></td>
                 <td>Course title</td>
                 <td>Book Image</td>
                 <td>Book Title</td>
-                <td style="text-decoration=underline;"><a href="priceSort/page1.php"></a></td>
+                <td style="text-decoration=underline;"><a href="priceSort/page1.php">Course #</a></td>
             </tr>
             <?php foreach ($products as $product) { ?>
             <tr>
@@ -45,11 +45,11 @@
             <?php } ?>
         </table>
         <div class="number__container">
-            <a href="index.php">1</a>
-            <a href="page2.php">2</a>
-            <a href="page3.php">3</a>
-            <a href="page4.php">4</a>
-            <a href="page5.php">5</a>
+            <a href="courseSort/page1.php">1</a>
+            <a href="courseSort/page2.php">2</a>
+            <a href="courseSort/page3.php">3</a>
+            <a href="courseSort/page4.php">4</a>
+            <a href="courseSort/page5.php">5</a>
         </div>
 <?php
     include_once 'footer.php';

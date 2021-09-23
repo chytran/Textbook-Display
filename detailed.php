@@ -16,19 +16,26 @@
 
     // Get image result from submission
     // $imageValue = filter_input(INPUT_POST, 'imageValue');
-    // $imageValue = $_GET['imageValue'];
+    $imageValue = $_GET['imageValue'];
 
-    $query = 'SELECT course.courseID, course.courseTitle, course.credit, coursebook.
+    $query = 'SELECT course.courseID, course.courseTitle, course.credit, 
+                book.bookTitle, 
+                book.price, 
+                authorbook.author = :author_id, authorbook.book
+                book.publisher,
+                book.edition,
+                book.length,
+                book.isbn13, 
+                book.description
                 FROM course 
-                INNER JOIN courseBook  
-                on course.courseID = coursebook.course
+                INNER JOIN authorbook  
+                on authorbook.book = book.isbn13
                 INNER JOIN book
-                on book.isbn13 = coursebook.book
-                ORDER BY course.courseID
-                LIMIT 5';
+                on book.publisher = authorbook.author
+                LIMIT 1';
     $statement = $db->prepare($query);
-    // $author_id = 1;
-    // $statement->bindValue(':author_id', $author_id);
+    $author_id = 1;
+    $statement->bindValue(':author_id', $author_id);
     $statement->execute();
 
     // fetchAll() gets all rows from the prepared query statement

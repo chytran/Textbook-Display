@@ -14,7 +14,11 @@
     // creates a PDO database connection object
     $db = new PDO($dsn, $username, $password); 
 
-    $query = 'SELECT course.courseTitle, course.credit, book.isbn13, book.price, book.bookTitle, course.courseID, coursebook.book
+    // Get image result from submission
+    // $imageValue = filter_input(INPUT_POST, 'imageValue');
+    // $imageValue = $_GET['imageValue'];
+
+    $query = 'SELECT course.courseID, course.courseTitle, course.credit, coursebook.
                 FROM course 
                 INNER JOIN courseBook  
                 on course.courseID = coursebook.course
@@ -32,9 +36,17 @@
     $statement->closeCursor();
     ?>
 
+    <!-- courseID Course Title Credits -->
+    <!-- Book Title -->
+    <!-- Price -->
+    <!-- Author -->
+    <!-- Publisher -->
+    <!-- Edition -->
+    <!-- Length -->
+    <!-- ISB13 -->
 
-
-
+    <!-- Production Description -->
+    SELECT * FROM 
 
 <!-- Footer -->
 <?php

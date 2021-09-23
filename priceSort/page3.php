@@ -16,8 +16,8 @@
                 on course.courseID = coursebook.course
                 INNER JOIN book
                 on book.isbn13 = coursebook.book
-                ORDER BY course.courseID
-                LIMIT 5';
+                ORDER BY book.price
+                LIMIT 5 OFFSET 10';
     $statement = $db->prepare($query);
     // $author_id = 1;
     // $statement->bindValue(':author_id', $author_id);
@@ -67,11 +67,11 @@
             <?php } ?>
         </table>
         <div class="number__container">
-            <a href="courseSort/page1.php">1</a>
-            <a href="courseSort/page2.php">2</a>
-            <a href="courseSort/page3.php">3</a>
-            <a href="courseSort/page4.php">4</a>
-            <a href="courseSort/page5.php">5</a>
+            <a href="priceSort/page1.php">1</a>
+            <a href="priceSort/page2.php">2</a>
+            <a href="priceSort/page3.php">3</a>
+            <a href="priceSort/page4.php">4</a>
+            <a href="priceSort/page5.php">5</a>
         </div>
 <?php
     include_once 'footer.php';

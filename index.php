@@ -11,7 +11,7 @@
                 <td>Course title</td>
                 <td>Book Image</td>
                 <td>Book Title</td>
-                <td style="text-decoration=underline;"><a href="priceSort/page1.php"></a></td>
+                <td style="text-decoration=underline;"><a href="priceSort/page1.php">Price</a></td>
             </tr>
             <?php foreach ($products as $product) { ?>
             <tr>

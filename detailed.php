@@ -18,7 +18,16 @@
     $courseTitle = filter_input(INPUT_POST, 'courseTitle');
     $imageValue = filter_input(INPUT_POST, 'imageValue');
     $bookTitle = filter_input(INPUT_POST, 'bookTitle');
-    if $imageValue = 
+    $price = filter_input(INPUT_POST, 'price');
+    $author = filter_input(INPUT_POST, 'author');
+    if ($imageValue == '9781890774561') {
+        $author = 'Joel Murach, Ray Harris';
+    } else if ($imageValue == '9781890774448') {
+        $author = 'Joel Murach, Andrea Steelman';
+    } else if ($imageValue == '9780596527525') {
+        $author = 'Jennifer Robbins, Aaron Gustafson';
+    }
+    
     // $imageValue = $_GET['imageValue'];
 
     ?>
@@ -32,20 +41,16 @@
     <!-- ISB13 -->
 
     <!-- Production Description -->
-    SELECT * FROM 
-
-    <p>
-        <?php echo $imageValue; ?>
-    </p>
     <table border=“1”>
         <tr>
             <td>
-                <img src="images/<?php echo $imageValue . '.jpg'; ?>" alt=""><a href=""></a>
+                <img src="images/<?php echo $imageValue . '.jpg'; ?>" alt="">
             </td>
             <td>
                 <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
                     <p>For course: <?php echo $courseTitle;?></p>
-                    
+                    <p>Book Title: <?php echo $bookTitle;?></p>
+                    <p>Book Title: <?php echo $price;?></p>
                 </div>
             </td>
         </tr>

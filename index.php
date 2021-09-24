@@ -68,12 +68,10 @@
                             <input type="hidden" name="courseTitle" value="<?php echo $product['courseTitle']; ?>">
                             <input type="hidden" name="bookTitle" value="<?php echo $product['bookTitle']; ?>">
                             <input type="hidden" name="price" value="<?php echo $product['price']; ?>">
-                            <?php
-                                include 'author.php'
-                            ?>
-                            <input type="hidden" name="bookTitle" value="<?php echo $product['courseTitle']; ?>">
-                            <input type="hidden" name="bookTitle" value="<?php echo $product['courseTitle']; ?>">
-                            <input type="hidden" name="bookTitle" value="<?php echo $product['courseTitle']; ?>">
+                            <input type="hidden" name="author" value="<?php echo $product['firstName'] . ' ' . $product['lastName']; ?>">
+                            <input type="hidden" name="bookTitle" value="<?php echo $product['publisher']; ?>">
+                            <input type="hidden" name="bookTitle" value="<?php echo $product['edition']; ?>">
+                            <input type="hidden" name="bookTitle" value="<?php echo $product['length']; ?>">
                             <input type="hidden" name="bookTitle" value="<?php echo $product['courseTitle']; ?>">
                             <input type="hidden" name="imageValue" value="<?php echo $product['isbn13'];?>">
                             <input type="image" src="images/<?php echo $product['isbn13'] . '.jpg'; ?>">

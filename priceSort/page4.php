@@ -17,7 +17,7 @@
                 INNER JOIN book
                 on book.isbn13 = coursebook.book
                 ORDER BY book.price
-                LIMIT 5 OFFSET 15';
+                LIMIT 4 OFFSET 16';
     $statement = $db->prepare($query);
     // $author_id = 1;
     // $statement->bindValue(':author_id', $author_id);

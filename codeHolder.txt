@@ -1,0 +1,24 @@
+<p>For course: <?php $products['courseTitle'];?></p>
+                    <p>Book Title: <?php $products['bookTitle'];?></p>
+                    <p>Price: <?php $products['price'];?></p>
+                    <p>Authors: <?php $products['author'];?></p>
+                    <p>Publisher: <?php $products['publisher'];?></p>
+                    <p>Edition: <?php $products['edition'];?></p>
+                    <p>Length: <?php $products['length'];?></p>
+                    <p>ISBN-13: <?php $products['isbn13'];?></p>
+
+                    $query = 'SELECT course.courseTitle, course.credit, book.isbn13, book.price, book.bookTitle, course.courseID, 
+                coursebook.book,
+                authorbook.author, authorbook.book,
+                book.publisher,
+                book.edition,
+                book.length, 
+                book.description
+                FROM course 
+                INNER JOIN courseBook  
+                on coursebook.course = course.courseID 
+                INNER JOIN authorbook  
+                on authorbook.book = coursebook.book
+                INNER JOIN book
+                on book.isbn13 = coursebook.book
+                WHERE coursebook.book = :coursebook_book';

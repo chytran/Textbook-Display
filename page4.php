@@ -155,22 +155,22 @@
                     <input type="hidden" name="publishDate" value="<?php echo date("Y/m/d", strtotime($product["publishDate"])); ?>">
                     <input type="hidden" name="length" value="<?php echo $product['length']; ?>">
                     <input type="hidden" name="description" value="<?php echo $product['description']; ?>">
-                    <input type="hidden" name="imageValue" value="<?php echo $product['book'];?>">
+                    <input type="hidden" name="imageValue" value="<?php echo '9781890774448';?>">
                     <input type="image" src="images/9781890774448.jpg">
                 </form>
 
                 <form action="detailed.php" method="POST">
-                    <input type="hidden" name="courseTitle" value="<?php echo $product['courseTitle']; ?>">
-                    <input type="hidden" name="bookTitle" value="<?php echo $product['bookTitle']; ?>">
-                    <input type="hidden" name="credit" value="<?php echo $product['credit'] ?>">
-                    <input type="hidden" name="price" value="<?php echo $product['price']; ?>">
-                    <input type="hidden" name="author" value="<?php echo $product['firstName'] . ' ' . $product['lastName']; ?>">
-                    <input type="hidden" name="publisher" value="<?php echo $product['publisher']; ?>">
-                    <input type="hidden" name="edition" value="<?php echo $product['edition']; ?>">
-                    <input type="hidden" name="publishDate" value="<?php echo date("Y/m/d", strtotime($product["publishDate"])); ?>">
-                    <input type="hidden" name="length" value="<?php echo $product['length']; ?>">
-                    <input type="hidden" name="description" value="<?php echo $product['description']; ?>">
-                    <input type="hidden" name="imageValue" value="<?php echo $product['book'];?>">
+                    <input type="hidden" name="courseTitle" value="<?php echo 'Advanced Java Programming for Business'; ?>">
+                    <input type="hidden" name="bookTitle" value="<?php echo "Murach's PHP and MySQL"; ?>">
+                    <input type="hidden" name="credit" value="<?php echo '4'?>">
+                    <input type="hidden" name="price" value="<?php echo '34.34'; ?>">
+                    <input type="hidden" name="author" value="<?php echo 'Joel Murach'; ?>">
+                    <input type="hidden" name="publisher" value="<?php echo 'Mike Murach & Associates Inc'; ?>">
+                    <input type="hidden" name="edition" value="<?php echo '1st.'; ?>">
+                    <input type="hidden" name="publishDate" value="<?php echo '2010/11/23'; ?>">
+                    <input type="hidden" name="length" value="<?php echo '840'; ?>">
+                    <input type="hidden" name="description" value="<?php echo "This book was developed by the same team that authored Murach's JavaScript and DOM Scripting, and it has the same strong content organization that lets you focus on what you need to know, when you need to know it."; ?>">
+                    <input type="hidden" name="imageValue" value="<?php echo '9781890774561';?>">
                     <input type="image" src="images/9781890774561.jpg">
                 </form>
             <?php } else { ?>

@@ -15,11 +15,15 @@
     $db = new PDO($dsn, $username, $password); 
 
     // Get image result from submission
-    $courseTitle = filter_input(INPUT_POST, 'courseTitle');
     $imageValue = filter_input(INPUT_POST, 'imageValue');
+    $courseTitle = filter_input(INPUT_POST, 'courseTitle');
+    $credit = filter_input(INPUT_POST, 'credit');
     $bookTitle = filter_input(INPUT_POST, 'bookTitle');
     $price = filter_input(INPUT_POST, 'price');
     $author = filter_input(INPUT_POST, 'author');
+    $publisher = filter_input(INPUT_POST, 'publisher');
+    $edition = filter_input(INPUT_POST, 'edition');
+    $publishDate = filter_input(INPUT_POST, 'publishDate');
     if ($imageValue == '9781890774561') {
         $author = 'Joel Murach, Ray Harris';
     } else if ($imageValue == '9781890774448') {
@@ -48,7 +52,7 @@
             </td>
             <td>
                 <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-                    <p>For course: <?php echo $courseTitle;?></p>
+                    <p>For course: <?php echo $courseTitle . ' (' . $credit . '*)';?></p>
                     <p>Book Title: <?php echo $bookTitle;?></p>
                     <p>Book Title: <?php echo $price;?></p>
                 </div>

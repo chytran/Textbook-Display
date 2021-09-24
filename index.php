@@ -53,6 +53,46 @@
                 </td>
             </tr>
             <?php } ?>
+            <?php foreach ($products2 as $product) { ?>
+            <tr>
+                
+                <!-- course #, course title, book image, book title, price -->
+                <td><?php echo $product['courseID'] . ' (' . $product['credit'] . ')'; ?></td>
+                <td><?php echo $product['courseTitle']; ?></td>
+                <td> 
+                    <?php if ($product['courseID'] == 'IS 424'){ ?>
+                        <img src="images/<?php echo '9781890774448' . '.jpg'; ?>" alt=""><a href=""></a>
+                        <img src="images/<?php echo '9781890774561' . '.jpg'; ?>" alt=""><a href=""></a>
+                    <?php } else { ?>
+                        <form action="detailed.php" method="POST">
+                            <input type="hidden" name="courseTitle" value="<?php echo $product['courseTitle']; ?>">
+                            <input type="hidden" name="bookTitle" value="<?php echo $product['bookTitle']; ?>">
+                            <input type="hidden" name="price" value="<?php echo $product['price']; ?>">
+                            <input type="hidden" name="bookTitle" value="<?php echo $product['courseTitle']; ?>">
+                            <input type="hidden" name="bookTitle" value="<?php echo $product['courseTitle']; ?>">
+                            <input type="hidden" name="bookTitle" value="<?php echo $product['courseTitle']; ?>">
+                            <input type="hidden" name="bookTitle" value="<?php echo $product['courseTitle']; ?>">
+                            <input type="hidden" name="imageValue" value="<?php echo $product['isbn13'];?>">
+                            <input type="image" src="images/<?php echo $product['isbn13'] . '.jpg'; ?>">
+                        </form>
+                    <?php } ?>
+
+                
+                </td>
+                <td><?php echo $product['bookTitle']; ?></td>
+                <td>
+                    <?php if ($product['courseID'] == 'IS 424'){ ?>
+                        <div>
+                            $33.51
+                            <br>
+                            $34.34
+                        </div>
+                    <?php } else { ?>
+                        <?php echo '$' . $product['price']; ?>
+                    <?php } ?>
+                </td>
+            </tr>
+            <?php } ?>
         </table>
         <div class="number__container">
             <a href="index.php">1</a>

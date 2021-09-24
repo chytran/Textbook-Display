@@ -55,6 +55,16 @@
     <!-- Production Description -->
     SELECT * FROM 
 
+    <table border=“1”>
+        <tr>
+            <td>
+                
+            </td>
+            <td></td>
+        </tr>
+        <tr></tr>
+    </table>
+
 <!-- Footer -->
 <?php
     include_once 'footer.php';

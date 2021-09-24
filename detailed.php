@@ -43,7 +43,7 @@
             </td>
             <td>
                 <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-                    <p>For course: <?php echo $;?></p>
+                    <p>For course: <?php echo $courseTitle;?></p>
                     
                 </div>
             </td>

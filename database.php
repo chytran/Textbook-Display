@@ -11,19 +11,23 @@
                 book.isbn13, book.price, book.bookTitle, book.publisher, book.edition, book.length, book.description,
                 coursebook.book,
                 publisher.publisherID, publisher.publisher,
-                authorbook.author, authorbook.book
-            
+                authorbook.author, authorbook.book,
+                author.authorID, author.firstName, author.lastName
                 FROM course 
                 INNER JOIN coursebook  
                 on coursebook.course = course.courseID 
                 INNER JOIN book
                 on book.isbn13 = coursebook.book
                 INNER JOIN publisher
-                on book.publisher = publisher.publisherID 
+                on book.publisher = publisher.publisherID  
                 INNER JOIN authorbook
-                on authorbook.book = coursebook.book
+                on authorbook.book = book.isbn13 
+                INNER JOIN author
+                on author.authorID = authorbook.author
                 ORDER BY course.courseID
-                LIMIT 5';
+                LIMIT 5 OFFSET 0
+                
+                ';
     $statement = $db->prepare($query);
     // $author_id = 1;
     // $statement->bindValue(':author_id', $author_id);

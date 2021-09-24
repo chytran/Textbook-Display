@@ -15,5 +15,7 @@
                 on book.publisher = publisher.publisherID  
                 INNER JOIN authorbook
                 on authorbook.book = book.isbn13  
-                INNER JOIN author
-                on author.authorID = authorbook.author
+                
+                authorbook.author, authorbook.book,
+                INNER JOIN authorbook 
+                on coursebook.book = authorbook.book

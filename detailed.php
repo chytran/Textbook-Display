@@ -18,6 +18,7 @@
     $courseTitle = filter_input(INPUT_POST, 'courseTitle');
     $imageValue = filter_input(INPUT_POST, 'imageValue');
     $bookTitle = filter_input(INPUT_POST, 'bookTitle');
+    if $imageValue = 
     // $imageValue = $_GET['imageValue'];
 
     ?>

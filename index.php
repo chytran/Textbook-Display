@@ -68,6 +68,9 @@
                             <input type="hidden" name="courseTitle" value="<?php echo $product['courseTitle']; ?>">
                             <input type="hidden" name="bookTitle" value="<?php echo $product['bookTitle']; ?>">
                             <input type="hidden" name="price" value="<?php echo $product['price']; ?>">
+                            <?php
+                                include 'author.php'
+                            ?>
                             <input type="hidden" name="bookTitle" value="<?php echo $product['courseTitle']; ?>">
                             <input type="hidden" name="bookTitle" value="<?php echo $product['courseTitle']; ?>">
                             <input type="hidden" name="bookTitle" value="<?php echo $product['courseTitle']; ?>">

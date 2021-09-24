@@ -25,7 +25,8 @@
                         <img src="images/<?php echo '9781890774561' . '.jpg'; ?>" alt=""><a href=""></a>
                     <?php } else { ?>
                         <form action="detailed.php" method="POST">
-                            <input name="imageValue" value="<?php echo $product['isbn13']?>" type="image" src="images/<?php echo $product['isbn13'] . '.jpg'; ?>">
+                            <input type="hidden" name="imageValue" value="<?php echo $product['isbn13'];?>">
+                            <input type="image" src="images/<?php echo $product['isbn13'] . '.jpg'; ?>">
                         </form>
                     <?php } ?>
 

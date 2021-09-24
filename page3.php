@@ -30,7 +30,7 @@
     INNER JOIN author
     on author.authorID = authorbook.author
     ORDER BY course.courseID
-    LIMIT 1 OFFSET 17';
+    LIMIT 1 OFFSET 18';
     $statement = $db->prepare($query);
     // $author_id = 1;
     // $statement->bindValue(':author_id', $author_id);
@@ -59,7 +59,7 @@
     INNER JOIN author
     on author.authorID = authorbook.author
     ORDER BY course.courseID
-    LIMIT 1 OFFSET 18';
+    LIMIT 1 OFFSET 20';
     $statement = $db->prepare($query1);
     // $author_id = 1;
     // $statement->bindValue(':author_id', $author_id);
@@ -88,7 +88,7 @@
     INNER JOIN author
     on author.authorID = authorbook.author
     ORDER BY course.courseID
-    LIMIT 1 OFFSET 20';
+    LIMIT 1 OFFSET 23';
     $statement = $db->prepare($query2);
     // $author_id = 1;
     // $statement->bindValue(':author_id', $author_id);
@@ -117,7 +117,7 @@
     INNER JOIN author
     on author.authorID = authorbook.author
     ORDER BY course.courseID
-    LIMIT 2 OFFSET 23';
+    LIMIT 2 OFFSET 25';
     $statement = $db->prepare($query3);
     // $author_id = 1;
     // $statement->bindValue(':author_id', $author_id);

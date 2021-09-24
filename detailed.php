@@ -24,6 +24,8 @@
     $publisher = filter_input(INPUT_POST, 'publisher');
     $edition = filter_input(INPUT_POST, 'edition');
     $publishDate = filter_input(INPUT_POST, 'publishDate');
+    $length= filter_input(INPUT_POST, 'length');
+    $description= filter_input(INPUT_POST, 'description');
     
     // include_once 'author.php';
     
@@ -43,20 +45,28 @@
     <!-- Production Description -->
     <table border=“1”>
         <tr>
-            <td>
+            <td width: "20%">
                 <img src="images/<?php echo $imageValue . '.jpg'; ?>" alt="">
             </td>
             <td>
-                <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-                    <p>For course: <?php echo $courseTitle . ' (' . $creditTime . '*)';?></p>
+                <div "80%" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                    <p>For course: <?php echo $courseTitle . ' (' . $creditTime . ')';?></p>
                     <p>Book Title: <?php echo $bookTitle;?></p>
                     <p>Price: <?php echo $price;?></p>
                     <p>Authors: <?php echo $author;?></p>
+                    <p>Publisher: <?php echo $publisher;?></p>
+                    <p>Edition: <?php echo $edition . ' edition' . ' (' . $publishDate . ')';?></p>
+                    <p>Length: <?php echo $length;?></p>
+                    <p>ISBN-13: <?php echo $imageValue;?></p>
                 </div>
             </td>
         </tr>
         <tr>
-
+            <td "100%">
+                Production Description:
+                <br>
+                <p><?php echo $description;?></p>
+            </td>
         </tr>
     </table>
 

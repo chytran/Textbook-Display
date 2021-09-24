@@ -45,11 +45,13 @@
     <!-- Production Description -->
     <table border=“1”>
         <tr>
-            <td width: "20%">
-                <img src="images/<?php echo $imageValue . '.jpg'; ?>" alt="">
+            <td style="width:40%;">
+                <div">
+                    <img src="images/<?php echo $imageValue . '.jpg'; ?>" alt="">
+                </div>
             </td>
-            <td>
-                <div "80%" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+            <td style="width: 100%;">
+                <div style="display: flex; justify-content: center; align-items: flex-start; flex-direction: column;">
                     <p>For course: <?php echo $courseTitle . ' (' . $creditTime . ')';?></p>
                     <p>Book Title: <?php echo $bookTitle;?></p>
                     <p>Price: <?php echo $price;?></p>
@@ -61,11 +63,15 @@
                 </div>
             </td>
         </tr>
+    </table>
+    <table border=“1”>
         <tr>
-            <td "100%">
-                Production Description:
-                <br>
-                <p><?php echo $description;?></p>
+            <td style="width: 100%;">
+                <div style="width: 100%;">
+                    Production Description:
+                    <br>
+                    <p><?php echo $description;?></p>
+                </div>
             </td>
         </tr>
     </table>

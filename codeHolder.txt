@@ -1,11 +1,11 @@
-<p>For course: <?php $products['courseTitle'];?></p>
-                    <p>Book Title: <?php $products['bookTitle'];?></p>
-                    <p>Price: <?php $products['price'];?></p>
-                    <p>Authors: <?php $products['author'];?></p>
-                    <p>Publisher: <?php $products['publisher'];?></p>
-                    <p>Edition: <?php $products['edition'];?></p>
-                    <p>Length: <?php $products['length'];?></p>
-                    <p>ISBN-13: <?php $products['isbn13'];?></p>
+                    <p>For course: <?php echo $;?></p>
+                    <p>Book Title: <?php echo $;?></p>
+                    <p>Price: <?php echo $;?></p>
+                    <p>Authors: <?php echo $;?></p>
+                    <p>Publisher: <?php echo $;?></p>
+                    <p>Edition: <?php echo $;?></p>
+                    <p>Length: <?php echo $;?></p>
+                    <p>ISBN-13: <?php echo $;?></p>
 
                     $query = 'SELECT course.courseTitle, course.credit, book.isbn13, book.price, book.bookTitle, course.courseID, 
                 coursebook.book,
@@ -22,3 +22,15 @@
                 INNER JOIN book
                 on book.isbn13 = coursebook.book
                 WHERE coursebook.book = :coursebook_book';
+
+                  $query = 'SELECT coursebook.course, coursebook.book, book.isbn13
+                FROM coursebook
+                INNER JOIN book
+                ON book.isbn13 = coursebook.book
+                WHERE coursebook.book = :coursebook_book 
+                    OR book.isbn13 = :book_isbn13';
+                $statement = $db->prepare($query);
+                $coursebook_book = $imageValue;
+                $statement->bindValue(':coursebook_book', $coursebook_book);
+                $statement->bindValue(':book_isbn13', $coursebook_book);
+                $statement->execute();

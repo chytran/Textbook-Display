@@ -25,6 +25,13 @@
                         <img src="images/<?php echo '9781890774561' . '.jpg'; ?>" alt=""><a href=""></a>
                     <?php } else { ?>
                         <form action="detailed.php" method="POST">
+                            <input type="hidden" name="courseTitle" value="<?php echo $product['courseTitle']; ?>">
+                            <input type="hidden" name="bookTitle" value="<?php echo $product['bookTitle']; ?>">
+                            <input type="hidden" name="price" value="<?php echo $product['price']; ?>">
+                            <input type="hidden" name="bookTitle" value="<?php echo $product['courseTitle']; ?>">
+                            <input type="hidden" name="bookTitle" value="<?php echo $product['courseTitle']; ?>">
+                            <input type="hidden" name="bookTitle" value="<?php echo $product['courseTitle']; ?>">
+                            <input type="hidden" name="bookTitle" value="<?php echo $product['courseTitle']; ?>">
                             <input type="hidden" name="imageValue" value="<?php echo $product['isbn13'];?>">
                             <input type="image" src="images/<?php echo $product['isbn13'] . '.jpg'; ?>">
                         </form>

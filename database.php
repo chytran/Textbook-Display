@@ -8,7 +8,7 @@
     $db = new PDO($dsn, $username, $password); 
 
     $query = 'SELECT course.courseTitle, course.credit, course.courseID,
-                book.isbn13, book.price, book.bookTitle, book.publisher, book.edition, book.length, book.description,
+                book.isbn13, book.price, book.bookTitle, book.publisher, book.edition, book.length, book.description, book.publishDate,
                 coursebook.book,
                 publisher.publisherID, publisher.publisher,
                 authorbook.author, authorbook.book,
@@ -38,7 +38,7 @@
     $statement->closeCursor();
 
     $query1 = 'SELECT course.courseTitle, course.credit, course.courseID,
-                book.isbn13, book.price, book.bookTitle, book.publisher, book.edition, book.publishDate book.length, book.description,
+                book.isbn13, book.price, book.bookTitle, book.publisher, book.edition, book.length, book.description, book.publishDate,
                 coursebook.book,
                 publisher.publisherID, publisher.publisher,
                 authorbook.author, authorbook.book,

@@ -5,6 +5,7 @@
             include_once 'database.php' 
 
         ?>
+        
         <table border=“1”>
             <tr style="background-color: #99CCFF;">
                 <td style="text-decoration=underline;"><a href="courseSort/page1.php">Course</a></td>

@@ -17,21 +17,17 @@
     // Get image result from submission
     $imageValue = filter_input(INPUT_POST, 'imageValue');
     $courseTitle = filter_input(INPUT_POST, 'courseTitle');
-    $credit = filter_input(INPUT_POST, 'credit');
+    $creditTime = filter_input(INPUT_POST, 'credit');
     $bookTitle = filter_input(INPUT_POST, 'bookTitle');
     $price = filter_input(INPUT_POST, 'price');
     $author = filter_input(INPUT_POST, 'author');
     $publisher = filter_input(INPUT_POST, 'publisher');
     $edition = filter_input(INPUT_POST, 'edition');
     $publishDate = filter_input(INPUT_POST, 'publishDate');
-    if ($imageValue == '9781890774561') {
-        $author = 'Joel Murach, Ray Harris';
-    } else if ($imageValue == '9781890774448') {
-        $author = 'Joel Murach, Andrea Steelman';
-    } else if ($imageValue == '9780596527525') {
-        $author = 'Jennifer Robbins, Aaron Gustafson';
-    }
     
+    // include_once 'author.php';
+    
+
     // $imageValue = $_GET['imageValue'];
 
     ?>
@@ -52,9 +48,10 @@
             </td>
             <td>
                 <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-                    <p>For course: <?php echo $courseTitle . ' (' . $credit . '*)';?></p>
+                    <p>For course: <?php echo $courseTitle . ' (' . $creditTime . '*)';?></p>
                     <p>Book Title: <?php echo $bookTitle;?></p>
-                    <p>Book Title: <?php echo $price;?></p>
+                    <p>Price: <?php echo $price;?></p>
+                    <p>Authors: <?php echo $author;?></p>
                 </div>
             </td>
         </tr>

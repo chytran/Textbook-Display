@@ -65,7 +65,7 @@
     <table border=“1”>
         <tr>
             <td>
-                <img src="images/<?php echo $imageValue;?>" alt="">
+                <img src="images/<?php echo $coursebook_book . '.jpg'; ?>" alt=""><a href=""></a>
             </td>
             <td>
                 <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">

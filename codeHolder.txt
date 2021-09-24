@@ -7,30 +7,13 @@
                     <p>Length: <?php echo $;?></p>
                     <p>ISBN-13: <?php echo $;?></p>
 
-                    $query = 'SELECT course.courseTitle, course.credit, book.isbn13, book.price, book.bookTitle, course.courseID, 
-                coursebook.book,
+                    author.authorID, author.firstName, author.lastName,
                 authorbook.author, authorbook.book,
-                book.publisher,
-                book.edition,
-                book.length, 
-                book.description
-                FROM course 
-                INNER JOIN courseBook  
-                on coursebook.course = course.courseID 
-                INNER JOIN authorbook  
-                on authorbook.book = coursebook.book
-                INNER JOIN book
-                on book.isbn13 = coursebook.book
-                WHERE coursebook.book = :coursebook_book';
+                publisher.publisherID, publisher.publisher
 
-                  $query = 'SELECT coursebook.course, coursebook.book, book.isbn13
-                FROM coursebook
-                INNER JOIN book
-                ON book.isbn13 = coursebook.book
-                WHERE coursebook.book = :coursebook_book 
-                    OR book.isbn13 = :book_isbn13';
-                $statement = $db->prepare($query);
-                $coursebook_book = $imageValue;
-                $statement->bindValue(':coursebook_book', $coursebook_book);
-                $statement->bindValue(':book_isbn13', $coursebook_book);
-                $statement->execute();
+                INNER JOIN publisher
+                on book.publisher = publisher.publisherID  
+                INNER JOIN authorbook
+                on authorbook.book = book.isbn13  
+                INNER JOIN author
+                on author.authorID = authorbook.author

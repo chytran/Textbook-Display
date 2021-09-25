@@ -183,9 +183,10 @@
                 <td>
                     <?php if ($product['courseID'] == 'IS 424'){ ?>
                         <div>
-                            Murach's Java Servlets and JSP
+                            <p>Murach's Java Servlets and JSP</p>
                             <br>
-                            Murach's PHP and MySQL
+                            
+                            <p>Murach's PHP and MySQL</p>
                         </div>
                     <?php } else { ?>
                         <?php echo $product['bookTitle']; ?>
@@ -195,6 +196,7 @@
                     <?php if ($product['courseID'] == 'IS 424'){ ?>
                         <div>
                             $33.51
+                            <br>
                             <br>
                             $34.34
                         </div>

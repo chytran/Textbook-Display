@@ -83,7 +83,6 @@
             <a href="page2.php">2</a>
             <a href="page3.php">3</a>
             <a href="page4.php">4</a>
-            
         </div>
 <?php../
     include_once '../footer.php';

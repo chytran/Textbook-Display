@@ -22,7 +22,7 @@
         on authorbook.book = book.isbn13 
         INNER JOIN author
         on author.authorID = authorbook.author
-        LIMIT 3 OFFSET 27';
+        LIMIT 2 OFFSET 30';
     $statement = $db->prepare($query);
     // $author_id = 1;
     // $statement->bindValue(':author_id', $author_id);
@@ -50,7 +50,7 @@
         on authorbook.book = book.isbn13 
         INNER JOIN author
         on author.authorID = authorbook.author
-        LIMIT 0 OFFSET 21';
+        LIMIT 1 OFFSET 34';
     $statement = $db->prepare($query2);
     // $author_id = 1;
     // $statement->bindValue(':author_id', $author_id);

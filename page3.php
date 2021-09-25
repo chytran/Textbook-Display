@@ -22,7 +22,7 @@
     on authorbook.book = book.isbn13 
     INNER JOIN author
     on author.authorID = authorbook.author
-    LIMIT 2 OFFSET 19';
+    LIMIT 2 OFFSET 21';
     $statement = $db->prepare($query);
     // $author_id = 1;
     // $statement->bindValue(':author_id', $author_id);
@@ -50,7 +50,7 @@
     on authorbook.book = book.isbn13 
     INNER JOIN author
     on author.authorID = authorbook.author
-    LIMIT 3 OFFSET 22';
+    LIMIT 2 OFFSET 24';
     $statement = $db->prepare($query2);
     // $author_id = 1;
     // $statement->bindValue(':author_id', $author_id);
@@ -60,7 +60,34 @@
     $products2 = $statement->fetchAll();
     $statement->closeCursor();
 
-    // Query 2
+    // Query 3
+    $query3 = 'SELECT course.courseTitle, course.credit, course.courseID,
+    book.isbn13, book.price, book.bookTitle, book.publisher, book.edition, book.length, book.description, book.publishDate,
+    coursebook.book,
+    publisher.publisherID, publisher.publisher,
+    authorbook.author, authorbook.book,
+    author.authorID, author.firstName, author.lastName
+    FROM course 
+    INNER JOIN coursebook  
+    on coursebook.course = course.courseID 
+    INNER JOIN book
+    on book.isbn13 = coursebook.book
+    INNER JOIN publisher
+    on book.publisher = publisher.publisherID  
+    INNER JOIN authorbook
+    on authorbook.book = book.isbn13 
+    INNER JOIN author
+    on author.authorID = authorbook.author
+    LIMIT 1 OFFSET 28';
+    $statement = $db->prepare($query3);
+    // $author_id = 1;
+    // $statement->bindValue(':author_id', $author_id);
+    $statement->execute();
+
+    // fetchAll() gets all rows from the prepared query statement
+    $products3 = $statement->fetchAll();
+    $statement->closeCursor();
+
     ?>
         <table border=“1”>
             <tr style="background-color: #99CCFF;">
@@ -105,6 +132,40 @@
 
             <!-- 2nd -->
             <?php foreach ($products2 as $product) { ?>
+            <tr>
+                
+                <!-- course #, course title, book image, book title, price -->
+                <td><?php echo $product['courseID'] . ' (' . $product['credit'] . ')'; ?></td>
+                <td><?php echo $product['courseTitle']; ?></td>
+                <td> 
+                    <?php if ($product['courseID'] == 'IS 424'){ ?>
+                        <img src="images/<?php echo '9781890774448' . '.jpg'; ?>" alt=""><a href=""></a>
+                        <img src="images/<?php echo '9781890774561' . '.jpg'; ?>" alt=""><a href=""></a>
+                    <?php } else { ?>
+                        <?php
+                            include 'formMain.php';
+                        ?>
+                    <?php } ?>
+
+                
+                </td>
+                <td><?php echo $product['bookTitle']; ?></td>
+                <td>
+                    <?php if ($product['courseID'] == 'IS 424'){ ?>
+                        <div>
+                            $33.51
+                            <br>
+                            $34.34
+                        </div>
+                    <?php } else { ?>
+                        <?php echo '$' . $product['price']; ?>
+                    <?php } ?>
+                </td>
+            </tr>
+            <?php } ?>
+
+            <!-- 3rd -->
+            <?php foreach ($products3 as $product) { ?>
             <tr>
                 
                 <!-- course #, course title, book image, book title, price -->

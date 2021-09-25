@@ -1,4 +1,4 @@
-<form action="../detailed.php" method="POST">
+<form action="detailed.php" method="POST">
     <input type="hidden" name="courseTitle" value="<?php echo $product['courseTitle']; ?>">
     <input type="hidden" name="bookTitle" value="<?php echo $product['bookTitle']; ?>">
     <input type="hidden" name="credit" value="<?php echo $product['credit'] ?>">
@@ -10,5 +10,5 @@
     <input type="hidden" name="length" value="<?php echo $product['length']; ?>">
     <input type="hidden" name="description" value="<?php echo $product['description']; ?>">
     <input type="hidden" name="imageValue" value="<?php echo $product['book'];?>">
-    <input type="image" src="../images/<?php echo $product['book'] . '.jpg'; ?>">
+    <input type="image" src="images/<?php echo $product['book'] . '.jpg'; ?>">
 </form>

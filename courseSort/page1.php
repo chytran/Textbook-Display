@@ -1,18 +1,18 @@
 <?php
-    include_once 'header.php';
+    include_once '../header.php';
 ?>
         <?php
-            include_once 'database.php' 
+            include_once '../database.php' 
 
         ?>
         
         <table border=“1”>
             <tr style="background-color: #99CCFF;">
-                <td style="text-decoration=underline;"><a href="index.php">Course</a></td>
+                <td style="text-decoration=underline;"><a href="page1.php">Course</a></td>
                 <td>Course title</td>
                 <td>Book Image</td>
                 <td>Book Title</td>
-                <td style="text-decoration=underline;"><a href="priceSort/page1.php">Price</a></td>
+                <td style="text-decoration=underline;"><a href="../priceSort/page1.php">Price</a></td>
             </tr>
             <?php foreach ($products as $product) { ?>
             <tr>
@@ -87,5 +87,5 @@
             <!-- <a href="page5.php">5</a> -->
         </div>
 <?php
-    include_once 'footer.php';
+    include_once '../footer.php';
 ?>

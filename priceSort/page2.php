@@ -157,7 +157,7 @@
     ?>
         <table border=“1”>
             <tr style="background-color: #99CCFF;">
-                <td style="text-decoration=underline;"><a href="../courseSort/page1.php">Course #</a></td>
+                <td style="text-decoration=underline;"><a href="../index.php">Course #</a></td>
                 <td>Course title</td>
                 <td>Book Image</td>
                 <td>Book Title</td>
@@ -174,7 +174,9 @@
                         <img src="../images/<?php echo '9781890774448' . '.jpg'; ?>" alt=""><a href=""></a>
                         <img src="../images/<?php echo '9781890774561' . '.jpg'; ?>" alt=""><a href=""></a>
                     <?php } else { ?>
-                        <img src="../images/<?php echo $product['isbn13'] . '.jpg'; ?>" alt=""><a href=""></a>
+                        <?php
+                            include '../formPrice.php';
+                        ?>
                     <?php } ?>
                 </td>
                 <td>
@@ -215,7 +217,9 @@
                         <img src="../images/<?php echo '9781890774448' . '.jpg'; ?>" alt=""><a href=""></a>
                         <img src="../images/<?php echo '9781890774561' . '.jpg'; ?>" alt=""><a href=""></a>
                     <?php } else { ?>
-                        <img src="../images/<?php echo $product['isbn13'] . '.jpg'; ?>" alt=""><a href=""></a>
+                        <?php
+                            include '../formPrice.php';
+                        ?>
                     <?php } ?>
                 </td>
                 <td>
@@ -297,7 +301,9 @@
                         <img src="../images/<?php echo '9781890774448' . '.jpg'; ?>" alt=""><a href=""></a>
                         <img src="../images/<?php echo '9781890774561' . '.jpg'; ?>" alt=""><a href=""></a>
                     <?php } else { ?>
-                        <img src="../images/<?php echo $product['isbn13'] . '.jpg'; ?>" alt=""><a href=""></a>
+                        <?php
+                            include '../formPrice.php';
+                        ?>
                     <?php } ?>
                 </td>
                 <td>
@@ -325,7 +331,7 @@
                 </td>
             </tr>
             <?php } ?>
-            
+
             <!-- 5th -->
             <?php foreach ($products5 as $product) { ?>
             <tr>
@@ -338,7 +344,9 @@
                         <img src="../images/<?php echo '9781890774448' . '.jpg'; ?>" alt=""><a href=""></a>
                         <img src="../images/<?php echo '9781890774561' . '.jpg'; ?>" alt=""><a href=""></a>
                     <?php } else { ?>
-                        <img src="../images/<?php echo $product['isbn13'] . '.jpg'; ?>" alt=""><a href=""></a>
+                        <?php
+                            include '../formPrice.php';
+                        ?>
                     <?php } ?>
                 </td>
                 <td>

@@ -38,6 +38,7 @@
     $products = $statement->fetchAll();
     $statement->closeCursor();
     ?>
+    <a href="../index.php">Reset</a>
         <table border=“1”>
             <tr style="background-color: #99CCFF;">
                 <td style="text-decoration=underline;"><a href="../index.php">Course #</a></td>
@@ -78,11 +79,11 @@
             <?php } ?>
         </table>
         <div class="number__container">
-            <a href="priceSort/page1.php">1</a>
-            <a href="priceSort/page2.php">2</a>
-            <a href="priceSort/page3.php">3</a>
-            <a href="priceSort/page4.php">4</a>
-            <a href="priceSort/page5.php">5</a>
+            <a href="page1.php">1</a>
+            <a href="page2.php">2</a>
+            <a href="page3.php">3</a>
+            <a href="page4.php">4</a>
+            
         </div>
 <?php../
     include_once '../footer.php';

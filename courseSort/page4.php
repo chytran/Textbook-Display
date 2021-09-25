@@ -1,5 +1,5 @@
 <?php
-    include_once 'header.php';
+    include_once '../header.php';
 ?>
 
 <?php
@@ -127,14 +127,14 @@
     $products4 = $statement->fetchAll();
     $statement->closeCursor();
 ?>
-
+<a href="../index.php">Reset</a>
 <table border=“1”>
     <tr style="background-color: #99CCFF;">
-    <td style="text-decoration=underline;"><a href="index.php">Course #</a></td>
+    <td style="text-decoration=underline;"><a href="page1.php">Course #</a></td>
         <td>Course title</td>
         <td>Book Image</td>
         <td>Book Title</td>
-        <td style="text-decoration=underline;"><a href="priceSort/page1.php">Price</a></td>
+        <td style="text-decoration=underline;"><a href="../priceSort/page1.php">Price</a></td>
     </tr>
     <?php foreach ($products as $product) { ?>
     <tr>
@@ -144,7 +144,7 @@
         <td><?php echo $product['courseTitle']; ?></td>
         <td> 
             <?php if ($product['courseID'] == 'IS 424'){ ?>
-                <form action="detailed.php" method="POST">
+                <form action="../detailed.php" method="POST">
                     <input type="hidden" name="courseTitle" value="<?php echo $product['courseTitle']; ?>">
                     <input type="hidden" name="bookTitle" value="<?php echo $product['bookTitle']; ?>">
                     <input type="hidden" name="credit" value="<?php echo $product['credit'] ?>">
@@ -156,10 +156,10 @@
                     <input type="hidden" name="length" value="<?php echo $product['length']; ?>">
                     <input type="hidden" name="description" value="<?php echo $product['description']; ?>">
                     <input type="hidden" name="imageValue" value="<?php echo '9781890774448';?>">
-                    <input type="image" src="images/9781890774448.jpg">
+                    <input type="image" src="../images/9781890774448.jpg">
                 </form>
 
-                <form action="detailed.php" method="POST">
+                <form action="../detailed.php" method="POST">
                     <input type="hidden" name="courseTitle" value="<?php echo 'Advanced Java Programming for Business'; ?>">
                     <input type="hidden" name="bookTitle" value="<?php echo "Murach's PHP and MySQL"; ?>">
                     <input type="hidden" name="credit" value="<?php echo '4'?>">
@@ -171,7 +171,7 @@
                     <input type="hidden" name="length" value="<?php echo '840'; ?>">
                     <input type="hidden" name="description" value="<?php echo "This book was developed by the same team that authored Murach's JavaScript and DOM Scripting, and it has the same strong content organization that lets you focus on what you need to know, when you need to know it."; ?>">
                     <input type="hidden" name="imageValue" value="<?php echo '9781890774561';?>">
-                    <input type="image" src="images/9781890774561.jpg">
+                    <input type="image" src="../images/9781890774561.jpg">
                 </form>
             <?php } else { ?>
                 <?php
@@ -335,12 +335,12 @@
     <?php } ?>
 </table>
 <div class="number__container">
-    <a href="index.php">1</a>
+    <a href="page1.php">1</a>
     <a href="page2.php">2</a>
     <a href="page3.php">3</a>
     <a href="page4.php">4</a>
     <!-- <a href="page5.php">5</a> -->
 </div>
 <?php
-    include_once 'footer.php';
+    include_once '../footer.php';
 ?>

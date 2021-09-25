@@ -1,5 +1,5 @@
 <?php
-    include_once 'header.php';
+    include_once '../header.php';
 ?>
 
 <?php
@@ -127,14 +127,14 @@
     $products4 = $statement->fetchAll();
     $statement->closeCursor();
 ?>
-
+<a href="../index.php">Reset</a>
 <table border=“1”>
     <tr style="background-color: #99CCFF;">
-    <td style="text-decoration=underline;"><a href="index.php">Course #</a></td>
+    <td style="text-decoration=underline;"><a href="page1.php">Course #</a></td>
         <td>Course title</td>
         <td>Book Image</td>
         <td>Book Title</td>
-        <td style="text-decoration=underline;"><a href="priceSort/page1.php">Price</a></td>
+        <td style="text-decoration=underline;"><a href="../priceSort/page1.php">Price</a></td>
     </tr>
     <?php foreach ($products as $product) { ?>
     <tr>
@@ -144,8 +144,8 @@
         <td><?php echo $product['courseTitle']; ?></td>
         <td> 
             <?php if ($product['courseID'] == 'IS 424'){ ?>
-                <img src="images/<?php echo '9781890774448' . '.jpg'; ?>" alt=""><a href=""></a>
-                <img src="images/<?php echo '9781890774561' . '.jpg'; ?>" alt=""><a href=""></a>
+                <img src="../images/<?php echo '9781890774448' . '.jpg'; ?>" alt=""><a href=""></a>
+                <img src="../images/<?php echo '9781890774561' . '.jpg'; ?>" alt=""><a href=""></a>
             <?php } else { ?>
                 <?php
                         include 'form.php';
@@ -256,12 +256,12 @@
     <?php } ?>
 </table>
 <div class="number__container">
-    <a href="index.php">1</a>
+    <a href="page1.php">1</a>
     <a href="page2.php">2</a>
     <a href="page3.php">3</a>
     <a href="page4.php">4</a>
     <!-- <a href="page5.php">5</a> -->
 </div>
 <?php
-    include_once 'footer.php';
+    include_once '../footer.php';
 ?>

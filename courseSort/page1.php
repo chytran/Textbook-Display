@@ -5,7 +5,7 @@
             include_once '../database.php' 
 
         ?>
-        
+        <a href="../index.php">Reset</a>
         <table border=“1”>
             <tr style="background-color: #99CCFF;">
                 <td style="text-decoration=underline;"><a href="page1.php">Course</a></td>
@@ -80,7 +80,7 @@
             <?php } ?>
         </table>
         <div class="number__container">
-            <a href="index.php">1</a>
+            <a href="page1.php">1</a>
             <a href="page2.php">2</a>
             <a href="page3.php">3</a>
             <a href="page4.php">4</a>

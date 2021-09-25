@@ -155,6 +155,7 @@
     $statement->closeCursor();
 
     ?>
+    <a href="../index.php">Reset</a>
         <table border=“1”>
             <tr style="background-color: #99CCFF;">
                 <td style="text-decoration=underline;"><a href="../index.php">Course #</a></td>

@@ -310,11 +310,11 @@
         </td>
         <td>
             <?php if ($product['courseID'] == 'IS 424'){ ?>
-            <div>
-                Murach's Java Servlets and JSP
-                <br>
-                Murach's PHP and MySQL
-            </div>
+                <div>
+                    Murach's Java Servlets and JSP
+                    <br>
+                    Murach's PHP and MySQL
+                </div>
             <?php } else { ?>
                 <?php echo $product['bookTitle']; ?>
             <?php } ?>

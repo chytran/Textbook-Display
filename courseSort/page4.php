@@ -1,8 +1,9 @@
 <?php
     include_once '../header.php';
 ?>
+
 <?php
-    include_once '../database.php' 
+    include_once '../database.php'; 
 ?>
 <?php
     $query = 'SELECT course.courseTitle, course.credit, course.courseID,

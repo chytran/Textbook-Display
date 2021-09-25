@@ -2,14 +2,9 @@
     include_once 'header.php';
 ?>
 <?php
-    $dsn = 'mysql:host=localhost:8111;dbname=BookCatalog';
-    // $dsn = 'mysql:host=localhost;dbname=BookCatalog';
-    $username = 'mgs_user';
-    $password = 'pa55word';
-
-    // creates a PDO database connection object
-    $db = new PDO($dsn, $username, $password); 
-
+    include_once 'database.php';
+?>
+<?
     $query = 'SELECT course.courseTitle, course.credit, course.courseID,
     book.isbn13, book.price, book.bookTitle, book.publisher, book.edition, book.length, book.description, book.publishDate,
     coursebook.book,

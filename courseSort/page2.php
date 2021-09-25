@@ -1,7 +1,9 @@
 <?php
     include_once '../header.php';
 ?>
-
+<?php
+    include_once '../database.php' 
+?>
 <?php
 
     $dsn = 'mysql:host=localhost:8111;dbname=BookCatalog';

@@ -76,8 +76,7 @@
                 <td style="text-decoration=underline;"><a href="priceSort/page1.php">Price</a></td>
             </tr>
             <?php foreach ($products as $product) { ?>
-            <tr>
-                
+            <tr>         
                 <!-- course #, course title, book image, book title, price -->
                 <td><?php echo $product['courseID'] . ' (' . $product['credit'] . ')'; ?></td>
                 <td><?php echo $product['courseTitle']; ?></td>

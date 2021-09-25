@@ -3,16 +3,11 @@
     include_once 'header.php';
 ?>
 
-<!-- Call database -->
 <?php
-    
-    $dsn = 'mysql:host=localhost:8111;dbname=BookCatalog';
-    // $dsn = 'mysql:host=localhost;dbname=BookCatalog';
-    $username = 'mgs_user';
-    $password = 'pa55word';
-
-    // creates a PDO database connection object
-    $db = new PDO($dsn, $username, $password); 
+    include 'database.php';
+?>
+<!-- Call database -->
+<?php 
 
     // Get image result from submission
     $imageValue = filter_input(INPUT_POST, 'imageValue');
@@ -55,7 +50,9 @@
                     <p>For course: <?php echo $courseTitle . ' (' . $creditTime . ')';?></p>
                     <p>Book Title: <?php echo $bookTitle;?></p>
                     <p>Price: <?php echo $price;?></p>
-                    <p>Authors: <?php echo $author;?></p>
+                    <?php  
+                        include 'author.php';
+                    ?>
                     <p>Publisher: <?php echo $publisher;?></p>
                     <p>Edition: <?php echo $edition . ' edition' . ' (' . $publishDate . ')';?></p>
                     <p>Length: <?php echo $length;?></p>
